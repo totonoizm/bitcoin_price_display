@@ -4,10 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
+
     <title>Document</title>
 </head>
 <body>
-    
-    <script></script>
+    <div id="app1">
+        <h2>Bitcoin Price</h2>
+        <ul v-cloak>
+            <li v-for="(rate, currency) in bpi">
+                {{ currency }} : {{ rate.rate_float | currency_decimal }}
+            </li>
+        </ul>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@0.18.0/dist/axios.min.js"></script>
+    <script src="js/index.js"></script>
 </body>
 </html>
